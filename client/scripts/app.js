@@ -24,13 +24,14 @@ var App = {
       // console.log(data.results); // Array(100)
       // console.log("Messages", Messages);  // Messages is global var
 
-      Messages = data.results;
+      Messages.storage = data.results;
       MessagesView.render();
 
       callback(); // App.stopSpinner
     });
-
+    //Message.readAll
   },
+
 
   startSpinner: function() {
     App.$spinner.show();

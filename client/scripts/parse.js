@@ -22,7 +22,7 @@ var Parse = {
       type: 'GET',
       data: { order: '-createdAt' },
       contentType: 'application/json',
-      success: successCB,
+      success: successCB, //first paramer data from the getrequest
       error: errorCB || function(error) {
         console.error('chatterbox: Failed to fetch messages', error);
       }
