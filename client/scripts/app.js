@@ -20,10 +20,16 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data);
+      // console.log(data); // {results: Array(100)}
+      // console.log(data.results); // Array(100)
+      // console.log("Messages", Messages);  // Messages is global var
 
-      callback();
+      Messages = data.results;
+      MessagesView.render();
+
+      callback(); // App.stopSpinner
     });
+
   },
 
   startSpinner: function() {
